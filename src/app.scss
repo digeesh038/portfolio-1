@@ -1,6 +1,11 @@
+::-webkit-scrollbar{
+    display: none !important;
+}
+
 html{
     scroll-snap-type: y mandatory;
     scroll-behavior: smooth;
+    
 }
 *{
     padding: 0;
