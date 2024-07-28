@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import "./parallax.scss";
 import { motion,useScroll,useTransform } from "framer-motion"
-
+import resume from '../../digee_resume.jpg';
 const Parallex = ({type}) => {
 
 const ref = useRef()
@@ -27,7 +27,7 @@ return (
     }}
     >
         <div class="canva-container">
-            <img className = "img" src="\src\digee_resume.jpg" alt="" />
+            <img className = "img" src={resume} alt="" />
         </div>
         <div className="a">
             <img src="/download.png" alt="" />
