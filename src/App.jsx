@@ -7,7 +7,6 @@ import Parallax from "./components/parallax/Parallax";
 import Portfolio from "./components/portfolio/Portfolio";
 import Services from "./components/services/Services";
 
-
 const App = () => {
   return <div>
     <section id="Homepage">
