@@ -55,10 +55,10 @@ return(
                 <h2>Mail</h2>
                 <span>digeesh038@gmail.com</span>
             </motion.div>
-            {/* <motion.div className="item"variants={variants}>
+            <motion.div className="item"variants={variants}>
                 <h2>Phone</h2>
                 <span>7339343016</span>
-            </motion.div> */}
+            </motion.div>
             <motion.div className="item"variants={variants}>
                 <h2>Address</h2>
                 <span>Namakkal,Tamilnadu</span>
