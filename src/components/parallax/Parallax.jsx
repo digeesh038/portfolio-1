@@ -20,8 +20,8 @@ const Parallax = ({ type }) => {
             ref={ref}
             style={{
                 background: type === "services"
-                    ? "linear-gradient(180deg, #111132, #0c0c1d)"
-                    : "linear-gradient(180deg, #111132, #505084)",
+                    ? "linear-gradient(180deg,#0c0c1d, #273f26)"
+                    : "linear-gradient(180deg,#0c0c1d, #273f26)",
             }}
         >
             <motion.div className="canva-container" style={{ y: yBg }}>
