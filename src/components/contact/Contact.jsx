@@ -75,11 +75,10 @@ return(
                 <input type="email" placeholder="Email" name = "email"/>
                 <textarea rows={8} placeholder="Message" name = "message"/>
                 <button>Submit</button>
-                {error && "Error"}
-                {success && "Success"}
+                {error && "Error ❌"}
+                {success && "Success ✅"}
             </motion.form>
         </div>
-        
     </motion.div>
 )
 }
