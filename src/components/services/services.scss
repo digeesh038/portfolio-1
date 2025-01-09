@@ -117,14 +117,14 @@
         }
 
         .box {
-            padding: 50px;
+            padding: 35px;
             border: 0.5px solid gray;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
             border-radius: 20px;
             text-align: center;
-            gap: 5px;
+            gap: 15px;
 
             p {
                 text-align: center;
@@ -134,9 +134,9 @@
                 border: none;
                 align-items: center;
                 gap: 5px;
-                padding: 15px;
+                padding: 12px;
                 overflow: hidden;
-                margin-bottom: 45px;
+                margin-bottom: 35px;
             }
 
             p {
