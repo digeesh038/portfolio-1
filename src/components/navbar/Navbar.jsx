@@ -13,10 +13,10 @@ return (
             >
                 Digeesh</motion.span>
             <div className="social">
-                <a href="https://github.com/digeesh038"><img src="/github-sign.png" alt="No image" /></a>
-                <a href="https://www.linkedin.com/in/digeesh-s-013051272/"><img src="/linkedin.png" alt="No image" /></a>
-                <a href="https://www.instagram.com/digee_2683/"><img src="/instagram.png" alt="No image" /></a>
-                <a href="https://x.com/digeesh_2683"><img src="/twitter.png" alt="No image" /></a>
+                <a href="https://github.com/digeesh038" target="_blank"><img src="/github-sign.png" alt="No image" /></a>
+                <a href="https://www.linkedin.com/in/digeesh-s-013051272/" target="_blank"><img src="/linkedin.png" alt="No image" /></a>
+                <a href="https://www.instagram.com/digee_2683/" target="_blank"><img src="/instagram.png" alt="No image" /></a>
+                <a href="https://x.com/digeesh_2683" target="_blank"><img src="/twitter.png" alt="No image" /></a>
             </div>
         </div>
     </div>

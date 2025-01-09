@@ -29,7 +29,7 @@ const Parallax = ({ type }) => {
             </motion.div>
             <motion.div className="a" style={{ y: yText }}>
             <img src="/download.png" alt="" />
-            <a href={resumePDF} download>Download CV</a>
+            <a href={resumePDF} download target="_blank">Download CV</a>
             </motion.div>
         </motion.div>
     );
