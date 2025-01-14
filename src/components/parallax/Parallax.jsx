@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import "./parallax.scss";
 import { motion, useScroll, useTransform } from "framer-motion";
-import resumeImage from '../../digee_resume.png';
+import resumeImage from '../../digee_resume.jpg';
 import resumePDF from '../../digee_resume.pdf';
 const Parallax = ({ type }) => {
     const ref = useRef();
