@@ -1,0 +1,57 @@
+@import "../../app.scss";
+
+.parallax {
+    .div{
+        border: 2px solid violet;
+        border-radius: 90px 0px;
+        font-size: 17px;
+        width: 70rem;
+        height:max-content;
+        text-align: justify;
+        padding: 10px;
+        background-color:rgb(12, 2, 49);
+        animation-name: example-animation;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+
+        @include mobile{
+            width:22rem;
+            height: 42rem;
+            font-size: 12px;
+            padding: 20px;
+            border-radius: 110px 0px;
+            font-weight: 600;
+        }
+    }
+
+    @keyframes example-animation{
+        25%{box-shadow: 0px 0px 50px rgb(232, 142, 232);}
+        50%{box-shadow: 0px 0px 50px rgb(228, 0, 228);}
+        75%{box-shadow: 0px 0px 50px rgb(112, 2, 112);}
+        100%{box-shadow: 0px 0px 50px rgb(48, 0, 48);}
+    }
+    .div p{
+        text-indent: 50px;
+    }
+
+    h1 {
+        text-align: center;
+
+        @include mobile{
+            font-size: 60px;
+            margin-bottom: 50px;
+            text-align: center;
+        }
+    }
+
+
+    .stars {
+        background-image: url("/stars.png");
+        background-size: cover;
+        background-position: bottom;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        z-index: 3;
+    }
+}
