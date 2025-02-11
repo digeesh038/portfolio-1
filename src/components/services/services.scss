@@ -113,11 +113,13 @@
         @include mobile {
             flex-direction: column;
             width: 100%;
-            margin-top: 10px;
+            height: 78%;
+            margin-bottom: 100px;
+            margin-top: 5px;
         }
 
         .box {
-            padding: 35px;
+            padding: 5px;
             border: 0.5px solid gray;
             display: flex;
             flex-direction: column;
@@ -125,6 +127,7 @@
             border-radius: 20px;
             text-align: center;
             gap: 15px;
+            margin-left: 5px;
 
             p {
                 text-align:start;
@@ -136,7 +139,7 @@
                 gap: 5px;
                 padding: 12px;
                 overflow: hidden;
-                margin-bottom: 35px;
+                margin-bottom: 15px;
             }
 
             p {
@@ -178,9 +181,8 @@
     padding: 10px 15px;
     gap: 15px;
     background-color: #181717;
-
     outline-offset: -3px;
-    border-radius: 5px;
+    border-radius: 20px;
     border: none;
     cursor: pointer;
     transition: 400ms;
