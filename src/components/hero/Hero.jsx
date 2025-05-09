@@ -50,7 +50,7 @@ return (
         animate="animate"
         >
             <motion.h2  variants ={textVariants}>DIGEESH</motion.h2>
-            <motion.h1  variants ={textVariants}>Web developer</motion.h1>
+            <motion.h1  variants ={textVariants}>Web Developer</motion.h1>
             {/* <motion.div className="buttons"  variants ={textVariants}>
                 <motion.button  variants ={textVariants}> See the Latest Works</motion.button>
                 <motion.button  variants ={textVariants}>Contact Me</motion.button>

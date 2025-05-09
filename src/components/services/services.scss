@@ -105,9 +105,10 @@
     .listContainer {
         flex: 2;
         display: flex;
-        max-width: 1366px;
+        max-width: 1600px;
         margin: auto;
         text-align: center;
+        margin-bottom: 50px;
 
 
         @include mobile {
@@ -123,11 +124,11 @@
             border: 0.5px solid gray;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
+            justify-content: space-evenly;
             border-radius: 20px;
             text-align: center;
             gap: 15px;
-            margin-left: 5px;
+            margin-left: 10px;
 
             p {
                 text-align:start;
