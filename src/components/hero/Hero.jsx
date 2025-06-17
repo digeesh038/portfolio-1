@@ -25,7 +25,7 @@ animate:{
 }
 
 const sliderVariants ={
-    inital:{
+    initial:{
         x:0,
     },
 animate:{
@@ -58,8 +58,8 @@ return (
             <motion.img   variants ={textVariants} animate="scrollButton" src="scroll.png" alt="" />
         </motion.div>
         </div>
-        <motion.div className="slidingTextContainer" variants={sliderVariants} inital = "inital" animate="animate">
-            Front-end Developer
+        <motion.div className="slidingTextContainer" variants={sliderVariants} initial = "inital" animate="animate">
+            Web Developer
         </motion.div>
         <div className="imageContainer">
         <img className="a"src="hero.png" alt="" />
