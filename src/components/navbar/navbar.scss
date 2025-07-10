@@ -1,46 +1,55 @@
 @import "../../app.scss";
 
-.navbar{
+.navbar {
     height: 100px;
-
-.wrapper{
-    max-width: 1366px;
-    margin: auto;
+    width: 100%;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    height: 100%;
-    margin-left: 150px;
+    background-color: transparent;
 
-    @include mobile{
-        justify-content: flex-end;
-        padding: 20px;
+    .wrapper {
+        max-width: 1366px;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 100%;
+        width: 100%;
+        padding: 0 50px;
+
+        @include mobile {
+            justify-content: flex-end;
+            padding: 0 20px;
+        }
+
+        span {
+            font-weight: bold;
+            font-size: 1.2rem;
+
+            @include mobile {
+                display: none;
+            }
+        }
+
+        .social {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+
+            @include mobile {
+                gap: 16px;
+            }
+
+            img {
+                width: 28px;
+                height: 28px;
+                object-fit: contain;
+
+                @include mobile {
+                    width: 24px;
+                    height: 24px;
+                }
+            }
+        }
     }
-
-span{
-    font-weight: bold;
-
-    @include mobile{
-        display: none;
-    }
-}
-.social{
-    display: flex;
-    gap:50px;
-
-    @include mobile{
-        gap: 17px;
-    }
-
-img{
-    width: 28px;
-    height: 28px;
-
-    @include mobile{
-        height: 28px;
-        width: 28px;
-    }
-}
-}
-}
 }

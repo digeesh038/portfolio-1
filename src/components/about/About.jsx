@@ -23,61 +23,48 @@ const About = ({ type }) => {
                 <div className="div">
                     <br />
                     <p>
-                        Hi, I'm Digeesh — a web developer who enjoys building useful and fun
-                        websites. I graduated with a degree in Information Technology from
-                        Sri Ramakrishna Engineering College. I'm curious by nature and enjoy
-                        using technology to solve real-world problems.
+                        Hello! I'm <strong>Digeesh Sakthivel</strong>, a passionate web developer and IT undergraduate at <strong>Sri Ramakrishna Engineering College</strong>. My curiosity for technology drives me to explore modern tools and create practical digital solutions for everyday challenges.
                     </p>
                     <br />
-                    🛠️ <strong>What I Do:</strong>
+                    🛠️ <strong>Core Stack:</strong>
                     <br />
                     <br />
                     <p>
-                        I work with tools like HTML, CSS, JavaScript, React, Node.js, and
-                        MongoDB. I use these to build full-stack websites that are
-                        responsive, user-friendly, and scalable.
+                        I primarily work with <strong>HTML, CSS, JavaScript, React, Node.js, and MongoDB</strong>, building responsive, full-stack web applications. I'm also currently exploring <strong>Laravel, React Native</strong>, and <strong>n8n</strong> for backend and automation workflows.
                     </p>
                     <br />
-                    🌟 <strong>Projects I've Worked On:</strong>
+                    🌟 <strong>Projects I’ve Built:</strong>
+                    <br />
+                    <br />
+                    <ul>
+                        <li>
+                            <strong>Banana Monkey Game</strong> – A fun, interactive game made with JavaScript.
+                        </li>
+                        <li>
+                            <strong>Farm Connect</strong> – A platform connecting farmers directly with buyers.
+                        </li>
+                        <li>
+                            <strong>Medicinal Leaf Classifier</strong> – A machine learning-based tool for identifying medicinal plants.
+                        </li>
+                    </ul>
+                    <br />
+                    💡 <strong>Why I Build:</strong>
                     <br />
                     <br />
                     <p>
-                        Some of my favorite projects:
-                        <ul>
-                            <li>
-                                <strong>Banana Monkey Game</strong> – A fun side-scrolling game
-                                made with JavaScript.
-                            </li>
-                            <li>
-                                <strong>Farm Connect</strong> – A website that helps farmers
-                                connect directly with buyers.
-                            </li>
-                            <li>
-                                <strong>Medicinal Leaf Classifier</strong> – A tool that uses
-                                machine learning to identify medicinal plants.
-                            </li>
-                        </ul>
+                        I love building things that have a meaningful impact — whether it's simplifying processes for farmers or creating engaging tools for learning and health. I believe technology should be useful, efficient, and accessible.
                     </p>
                     <br />
-                    💡 <strong>Why I Love Tech:</strong>
+                    🚀 <strong>On a Learning Journey:</strong>
                     <br />
                     <br />
                     <p>
-                        I enjoy using technology to make life easier. Whether it’s building
-                        tools for farmers, supporting healthcare, or creating fun games — I
-                        love working on things that have a real impact.
-                    </p>
-                    <br />
-                    🚀 <strong>Looking Ahead:</strong>
-                    <br />
-                    <br />
-                    <p>
-                        I’m always learning and improving. My goal is to be part of projects
-                        that solve real problems and make a positive difference.
+                        I’m constantly learning and improving my skills. With certifications like <strong>AWS Cloud Practitioner Essentials</strong>, I aim to stay ahead in tech and contribute to projects that create real-world value.
                     </p>
                 </div>
             </motion.div>
         </div>
     );
 };
+
 export default About;
