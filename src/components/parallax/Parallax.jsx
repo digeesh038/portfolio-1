@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import "./parallax.scss";
 import { motion, useScroll, useTransform } from "framer-motion";
-import resumeImage from '../../digee_resume.png';
+import resumeImage from '../../digee_resume.jpg';
 import resumePDF from '../../digee_resume.pdf';
 const Parallax = ({ type }) => {
     const ref = useRef();
@@ -25,11 +25,11 @@ const Parallax = ({ type }) => {
             }}
         >
             <motion.div className="canva-container" style={{ y: yBg }}>
-            <img src={resumeImage} alt="Resume" />
+                <img src={resumeImage} alt="Resume" />
             </motion.div>
             <motion.div className="a" style={{ y: yText }}>
-            <img src="/download.png" alt="" />
-            <a href={resumePDF} download target="_blank">Download CV</a>
+                <img src="/download.png" alt="" />
+                <a href={resumePDF} download target="_blank">Download CV</a>
             </motion.div>
         </motion.div>
     );
