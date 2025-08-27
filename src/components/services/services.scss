@@ -1,0 +1,358 @@
+@import "../../app.scss";
+
+.services {
+    background: linear-gradient(180deg, #0c0c1d, #273f26);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    @include desktop {
+        height: 100%;
+    }
+
+    @include tablet {
+        height: 100%;
+    }
+
+    .textContainer {
+        flex: 1;
+        align-self: flex-end;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+
+        @include desktop {
+            align-self: flex-end;
+            text-align: right;
+            flex-direction: row;
+            font-size: 20px;
+            margin-top: 0;
+        }
+
+        @include tablet {
+            align-self: flex-end;
+            text-align: right;
+            flex-direction: row;
+            font-size: 20px;
+            margin-top: 0;
+        }
+
+        @include mobile {
+            align-self: center;
+            text-align: center;
+            flex-direction: column;
+            font-size: 36px;
+            margin-top: 59px;
+        }
+    }
+
+    p {
+        font-size: 20px;
+        font-weight: 200;
+        color: gray;
+        text-align: right;
+
+        @include desktop {
+            text-align: right;
+        }
+
+        @include tablet {
+            text-align: center;
+        }
+
+        @include mobile {
+            text-align: center;
+        }
+    }
+
+    hr {
+        width: 400px;
+        border: none;
+        border-top: 0.5px solid gray;
+
+        @include desktop {
+            width: 400px;
+        }
+
+        @include tablet {
+            width: 350px;
+        }
+
+        @include mobile {
+            width: 300px;
+        }
+    }
+
+    .titleContainer {
+        flex: 2;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        @include desktop {
+            width: 100%;
+        }
+
+        @include tablet {
+            width: 100%;
+        }
+
+        @include mobile {
+            width: 100%;
+        }
+
+        .title {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+
+            @include desktop {
+                gap: 50px;
+                flex-direction: row;
+                text-align: left;
+            }
+
+            @include tablet {
+                gap: 30px;
+                flex-direction: row;
+                text-align: center;
+            }
+
+            @include mobile {
+                flex-direction: column;
+                text-align: center;
+                gap: 20px;
+            }
+
+            img {
+                width: 300px;
+                height: 100px;
+                border-radius: 50px;
+                object-fit: cover;
+
+                @include desktop {
+                    width: 300px;
+                    height: 100px;
+                }
+
+                @include tablet {
+                    width: 250px;
+                    height: 80px;
+                }
+
+                @include mobile {
+                    width: 200px;
+                    height: 50px;
+                }
+            }
+
+            h1 {
+                font-size: 96px;
+                font-weight: 100;
+
+                @include desktop {
+                    font-size: 96px;
+                }
+
+                @include tablet {
+                    font-size: 72px;
+                }
+
+                @include mobile {
+                    font-size: 36px;
+                }
+            }
+
+            button {
+                width: 300px;
+                height: 100px;
+                font-weight: bold;
+                font-size: 17px;
+                border-radius: 50px;
+                background-color: orange;
+                border: none;
+                cursor: pointer;
+
+                @include desktop {
+                    width: 300px;
+                    height: 100px;
+                }
+
+                @include tablet {
+                    font-size: 16px;
+                    width: 200px;
+                    height: 70px;
+                }
+
+                @include mobile {
+                    font-size: 16px;
+                    width: 150px;
+                    height: 50px;
+                }
+            }
+        }
+    }
+
+    .listContainer {
+        flex: 2;
+        display: flex;
+        max-width: 1600px;
+        margin: auto;
+        text-align: center;
+        margin-bottom: 50px;
+
+        @include desktop {
+            flex-direction: row;
+            width: 100%;
+            height: auto;
+            margin-bottom: 50px;
+            margin-top: 0;
+        }
+
+        @include tablet {
+            flex-direction: column;
+            width: 100%;
+            height: auto;
+            margin-bottom: 50px;
+            margin-top: 0;
+        }
+
+        @include mobile {
+            flex-direction: column;
+            width: 100%;
+            height: 78%;
+            margin-bottom: 100px;
+            margin-top: 5px;
+        }
+
+        .box {
+            padding: 5px;
+            border: 0.5px solid gray;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            border-radius: 20px;
+            text-align: center;
+            gap: 15px;
+            margin-left: 10px;
+
+            @include desktop {
+                padding: 5px;
+            }
+
+            @include tablet {
+                padding: 10px;
+                margin-bottom: 15px;
+            }
+
+            @include mobile {
+                border: none;
+                align-items: center;
+                gap: 5px;
+                padding: 12px;
+                overflow: hidden;
+                margin-bottom: 15px;
+            }
+
+            p {
+                text-align: start;
+
+                @include desktop {
+                    text-align: start;
+                    display: block;
+                }
+
+                @include tablet {
+                    text-align: center;
+                    display: block;
+                }
+
+                @include mobile {
+                    display: none;
+                }
+            }
+
+            img {
+                height: 20px;
+                width: 20px;
+                border-radius: 15px;
+            }
+
+            a {
+                padding: 10px;
+                background-color: orange;
+                border: orange;
+                cursor: pointer;
+
+                @include desktop {
+                    background-color: orange;
+                    border: orange;
+                }
+
+                @include tablet {
+                    background-color: transparent;
+                    border: 1px solid orange;
+                    border-radius: 5px;
+                    color: orange;
+                    width: 50%;
+                    padding: 5px;
+                }
+
+                @include mobile {
+                    background-color: transparent;
+                    border: 1px solid orange;
+                    border-radius: 5px;
+                    color: orange;
+                    width: 50%;
+                    padding: 5px;
+                }
+            }
+        }
+    }
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 15px;
+    gap: 15px;
+    background-color: #181717;
+    outline-offset: -3px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    transition: 400ms;
+
+    @include desktop {
+        width: 100%;
+    }
+
+    @include tablet {
+        width: 80%;
+    }
+}
+
+.button .text {
+    color: white;
+    font-weight: 700;
+    font-size: 1em;
+    transition: 400ms;
+}
+
+.button svg path {
+    transition: 400ms;
+}
+
+.button:hover {
+    background-color: transparent;
+}
+
+.button:hover .text {
+    color: #181717;
+}
+
+.button:hover svg path {
+    fill: #181717;
+}

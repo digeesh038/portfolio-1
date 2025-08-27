@@ -1,0 +1,76 @@
+@import "../../app.scss";
+
+.parallax {
+    .div {
+        border: 2px solid violet;
+        border-radius: 90px 0px;
+        font-size: 1rem;
+        width: 90%;
+        max-width: 960px;
+        height: auto;
+        text-align: justify;
+        padding: 30px;
+        background-color: rgb(12, 2, 49);
+        animation-name: example-animation;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+        margin: auto;
+
+        @include mobile {
+            width: 90%;
+            font-size: 0.9rem;
+            padding: 20px;
+            border-radius: 110px 0px;
+            font-weight: 600;
+        }
+
+        @media (max-width: 400px) {
+            font-size: 0.8rem;
+            padding: 15px;
+        }
+
+        @media (min-width: 768px) and (max-width: 1024px) {
+            font-size: 1rem;
+            padding: 25px;
+        }
+    }
+
+    @keyframes example-animation {
+        25% { box-shadow: 0px 0px 50px rgb(232, 142, 232); }
+        50% { box-shadow: 0px 0px 50px rgb(228, 0, 228); }
+        75% { box-shadow: 0px 0px 50px rgb(112, 2, 112); }
+        100% { box-shadow: 0px 0px 50px rgb(48, 0, 48); }
+    }
+
+    .div p {
+        text-indent: 50px;
+
+        @media (max-width: 500px) {
+            text-indent: 30px;
+        }
+    }
+
+    h1 {
+        text-align: center;
+
+        @include mobile {
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            text-align: center;
+        }
+
+        @media (max-width: 400px) {
+            font-size: 2rem;
+        }
+    }
+
+    .stars {
+        background-image: url("/stars.png");
+        background-size: cover;
+        background-position: bottom;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        z-index: 3;
+    }
+}
