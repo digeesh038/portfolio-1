@@ -1,6 +1,6 @@
 # 💼 Personal Portfolio
 
-A modern and responsive portfolio website built with React.js and powered by Vite for lightning-fast builds and hot module replacement. Optimized with SEO (Search Engine Optimization) to improve visibility on search engines.
+A modern and responsive portfolio website built with React.js and powered by Vite. Optimized with SEO (Search Engine Optimization) to improve visibility on search engines.
 ---
 
 ## 🔗 Live Demo
