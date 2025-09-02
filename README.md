@@ -62,15 +62,19 @@ portfolio-1/
 1. Clone the repository:
    ```bash
    git clone https://github.com/digeesh038/portfolio-1.git
+   ```
 2. Navigate to the project folder:
     ```bash
     cd portfolio-1
+    ```
 3. Install dependencies:
     ```bash
      npm install
+    ```
 4. Start the development server:
     ```bash
      npm start
+    ```
  ---
  
 ## 📬 Contact
