@@ -50,12 +50,12 @@ return (
         animate="animate"
         >
             <motion.h2  variants ={textVariants}>DIGEESH S</motion.h2>
-            <motion.h1  variants ={textVariants}>Web Developer</motion.h1>
+            <motion.h1  variants ={textVariants}>MERN Stack Developer</motion.h1>
             <motion.img   variants ={textVariants} animate="scrollButton" src="scroll.png" alt="" />
         </motion.div>
         </div>
-        <motion.div className="slidingTextContainer" variants={sliderVariants} initial = "inital" animate="animate">
-            Web Developer
+        <motion.div className="slidingTextContainer" variants={sliderVariants} initial = "initial" animate="animate">
+            MERN Stack Developer
         </motion.div>
         <div className="imageContainer">
         <img className="a"src="hero.png" alt="" />
