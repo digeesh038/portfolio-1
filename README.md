@@ -45,6 +45,7 @@ Check out the live version here:
 
 ## 📂 Project Structure
 
+```bash
 portfolio-1/
 ├── public/ # Static assets
 ├── src/ # Application source code
