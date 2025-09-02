@@ -1,7 +1,6 @@
 # 💼 Personal Portfolio
 
-A modern and responsive **portfolio website** built with **React.js** and powered by **Vite** for lightning-fast builds and hot module replacement.
-
+A modern and responsive portfolio website built with React.js and powered by Vite for lightning-fast builds and hot module replacement. Optimized with SEO (Search Engine Optimization) to improve visibility on search engines.
 ---
 
 ## 🔗 Live Demo
@@ -15,14 +14,17 @@ Check out the live version here:
 - 📱 Fully responsive (mobile-first approach)  
 - 🔗 Smooth navigation across sections  
 - 🛠️ Easy to customize and extend  
-- 🚀 Fast and optimized for deployment  
+- 🚀 Fast and optimized for deployment
+- 🔍 SEO optimized – Easily discoverable on Google (Search: “Digeesh MERN stack developer portfolio”) 
 
 ---
 
 ## 🛠️ Tech Stack
 - **React.js** – Frontend library  
 - **JavaScript (ES6+)**  
-- **HTML5 & CSS3**  
+- **HTML5 & CSS3**
+- **Vite** – Development & build tool
+- **SEO optimization**
 - **GitHub Pages / Netlify** – Deployment
   
 ---
