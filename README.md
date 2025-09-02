@@ -47,15 +47,15 @@ Check out the live version here:
 
 ```bash
 portfolio-1/
-├── public/ # Static assets
-├── src/ # Application source code
-│ ├── components/ # Reusable UI components
-│ ├── pages/ # Portfolio sections (About, Projects, Contact, etc.)
-│ ├── App.js # Root component
-│ └── index.js # Entry point
+├── public/            # Static assets
+├── src/               # Application source code
+│   ├── components/    # Reusable UI components
+│   ├── pages/         # Portfolio sections (About, Projects, Contact, etc.)
+│   ├── App.js         # Root component
+│   └── index.js       # Entry point
 ├── package.json
 └── README.md
-
+```
 ---
 
 ## ⚙️ Installation & Setup
@@ -65,15 +65,15 @@ portfolio-1/
 2. Navigate to the project folder:
     ```bash
     cd portfolio-1
-4. Install dependencies:
+3. Install dependencies:
     ```bash
      npm install
-6. Start the development server:
+4. Start the development server:
     ```bash
      npm start
  ---
  
-📬 Contact
+## 📬 Contact
 
 👤 Digeesh S
 
@@ -81,4 +81,4 @@ GitHub: digeesh038
 
 Email: digeesh038@gmail.com
 
-LinkedIn: [Digeesh](https://www.linkedin.com/in/digeesh-s/)
+LinkedIn: https://www.linkedin.com/in/digeesh-s/
