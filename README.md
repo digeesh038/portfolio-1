@@ -1,7 +1,6 @@
 # 💼 Personal Portfolio
 
-A modern and responsive **portfolio website** built with **React.js** to showcase my skills, projects, and experience.  
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A modern and responsive **portfolio website** built with **React.js** and powered by **Vite** for lightning-fast builds and hot module replacement.
 
 ---
 
