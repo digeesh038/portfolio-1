@@ -34,9 +34,9 @@ Check out the live version here:
 
   <img width="1919" height="868" alt="image" src="https://github.com/user-attachments/assets/a1757caa-43ac-4640-ae45-5364c8a93623" />
 
-   <img width="1919" height="869" alt="image" src="https://github.com/user-attachments/assets/25e1c029-4ddd-45dc-8985-8d842c95f0e9" />
+   <img width="1919" height="869" alt="image" src="https://github.com/user-attachments/assets/0f7c4716-5a15-45e3-b709-51383d7c830c" />
 
-   <img width="1919" height="867" alt="image" src="https://github.com/user-attachments/assets/3990881b-2234-4e7a-8942-1f89b2045ead" />
+<img width="1919" height="865" alt="image" src="https://github.com/user-attachments/assets/c7f98dbf-22bd-4a17-a9ce-fdf3d4b8c3d1" />
 
    <img width="1919" height="871" alt="image" src="https://github.com/user-attachments/assets/ae28b2c0-301d-42e1-b3ee-4f0c71099ad7" />
 
