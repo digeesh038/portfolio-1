@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { portfolioData } from "../../data/portfolioData";
 import { Mail, MapPin, Send, CheckCircle2, AlertCircle, Copy, Check } from "lucide-react";
 import { Github, Linkedin, Twitter } from "../Common/Icons";
-import "./Contact.scss";
+import "./contact.scss";
 
 const Contact = () => {
   const { personal, contact } = portfolioData;

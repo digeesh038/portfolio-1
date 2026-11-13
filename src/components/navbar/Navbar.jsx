@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useTheme } from "../../context/ThemeContext";
 import { portfolioData } from "../../data/portfolioData";
 import { Sun, Moon, Download, Menu, X, Terminal } from "lucide-react";
-import "./Navbar.scss";
+import "./navbar.scss";
 
 const navLinks = [
   { name: "About", href: "#about" },

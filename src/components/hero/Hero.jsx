@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { portfolioData } from "../../data/portfolioData";
 import { Download, ArrowRight, Mail, Check, Sparkles, MapPin } from "lucide-react";
 import { Github, Linkedin, Twitter } from "../Common/Icons";
-import "./Hero.scss";
+import "./hero.scss";
 
 const Hero = () => {
   const { personal } = portfolioData;

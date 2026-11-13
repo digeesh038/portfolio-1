@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { portfolioData } from "../../data/portfolioData";
 import { Award, Code2, Cpu, GraduationCap, Layers, Server, ShieldCheck, Zap } from "lucide-react";
-import "./About.scss";
+import "./about.scss";
 
 const About = () => {
   const { personal, education } = portfolioData;
