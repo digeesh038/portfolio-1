@@ -1,0 +1,186 @@
+@import '../../styles/variables.scss';
+
+.projects-section {
+  background: transparent;
+}
+
+.project-filters {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin-bottom: 2.75rem;
+
+  .filter-btn {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    padding: 0.55rem 1.25rem;
+    border-radius: 9999px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+
+    &:hover {
+      color: var(--text-primary);
+      border-color: var(--border-hover);
+    }
+
+    &.active {
+      background: var(--accent-lime);
+      border-color: var(--accent-lime);
+      color: var(--accent-primary-text);
+      font-weight: 700;
+      box-shadow: 0 4px 16px var(--accent-glow);
+    }
+  }
+}
+
+.projects-bento-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.75rem;
+
+  @media (max-width: 868px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  &.featured-card {
+    border-color: rgba(255, 48, 56, 0.28);
+    background: linear-gradient(180deg, var(--bg-card) 0%, rgba(255, 48, 56, 0.04) 100%);
+
+    &:hover {
+      border-color: var(--border-red-hover);
+      box-shadow: 0 16px 32px -10px var(--accent-red-glow);
+    }
+  }
+
+  .project-top-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.75rem;
+
+    .category-meta {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+
+      .project-category {
+        font-family: $font-mono;
+        font-size: 0.75rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        color: var(--accent-lime);
+      }
+
+      .featured-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.25rem;
+        font-size: 0.72rem;
+        font-weight: 700;
+        background: var(--badge-red-bg);
+        color: var(--accent-red);
+        border: 1px solid var(--badge-red-border);
+        padding: 0.15rem 0.55rem;
+        border-radius: 9999px;
+      }
+    }
+
+    .project-links {
+      display: flex;
+      gap: 0.5rem;
+
+      .project-link-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 36px;
+        height: 36px;
+        border-radius: 8px;
+        background: var(--bg-elevated);
+        border: 1px solid var(--border-color);
+        color: var(--text-secondary);
+        text-decoration: none;
+        transition: all 0.2s ease;
+
+        &:hover {
+          color: var(--accent-lime);
+          border-color: var(--accent-lime);
+          transform: translateY(-2px);
+        }
+      }
+    }
+  }
+
+  .project-title {
+    font-size: 1.35rem;
+    font-weight: 750;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+    line-height: 1.3;
+  }
+
+  .project-metrics-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-family: $font-mono;
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: var(--accent-lime);
+    background: var(--badge-bg);
+    border: 1px solid var(--badge-border);
+    padding: 0.2rem 0.7rem;
+    border-radius: 6px;
+    width: fit-content;
+    margin-bottom: 0.85rem;
+  }
+
+  .project-description {
+    font-size: 0.94rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 1.25rem;
+  }
+
+  .project-achievements {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+    margin-bottom: 1.5rem;
+
+    li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.55rem;
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+      line-height: 1.5;
+
+      .check-icon {
+        color: var(--accent-red);
+        flex-shrink: 0;
+        margin-top: 0.2rem;
+      }
+    }
+  }
+
+  .project-tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border-color);
+  }
+}

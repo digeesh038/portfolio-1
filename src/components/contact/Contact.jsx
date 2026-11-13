@@ -1,124 +1,229 @@
-import { motion, useInView } from "framer-motion";
-import "./contact.scss";
-import { useRef, useState } from "react";
-
-const variants = {
-    initial: {
-        y: 500,
-        opacity: 0,
-    },
-    animate: {
-        y: 0,
-        opacity: 1,
-        transition: {
-            duration: 0.5,
-            staggerChildren: 0.1,
-        },
-    },
-};
+import React, { useState, useRef } from "react";
+import { motion } from "framer-motion";
+import { portfolioData } from "../../data/portfolioData";
+import { Mail, MapPin, Send, CheckCircle2, AlertCircle, Copy, Check } from "lucide-react";
+import { Github, Linkedin, Twitter } from "../Common/Icons";
+import "./Contact.scss";
 
 const Contact = () => {
-    const ref = useRef();
-    const formRef = useRef();
+  const { personal, contact } = portfolioData;
+  const formRef = useRef();
 
-    const [error, setError] = useState(false);
-    const [success, setSuccess] = useState(false);
-    const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState(false);
+  const [error, setError] = useState(false);
+  const [copied, setCopied] = useState(false);
 
-    const isInView = useInView(ref, { margin: "-100px" });
+  const copyEmail = () => {
+    navigator.clipboard.writeText(personal.email);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2500);
+  };
 
-    const sendEmail = async (e) => {
-        e.preventDefault();
-        setLoading(true);
-        setError(false);
-        setSuccess(false);
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    setError(false);
+    setSuccess(false);
 
-        const formData = new FormData(formRef.current);
-        // Replace YOUR_ACCESS_KEY_HERE with your actual Web3Forms access key
-        formData.append("access_key", "eef5f3f7-3d2d-4a6b-9b64-4df251be5dc7");
+    const formData = new FormData(formRef.current);
+    formData.append("access_key", contact.accessKey);
 
-        try {
-            const response = await fetch("https://api.web3forms.com/submit", {
-                method: "POST",
-                body: formData
-            });
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData
+      });
+      const data = await response.json();
 
-            const data = await response.json();
+      if (data.success) {
+        setSuccess(true);
+        formRef.current.reset();
+        setTimeout(() => setSuccess(false), 6000);
+      } else {
+        setError(true);
+      }
+    } catch (err) {
+      console.error("Submission error:", err);
+      setError(true);
+    } finally {
+      setLoading(false);
+    }
+  };
 
-            if (data.success) {
-                setSuccess(true);
-                formRef.current.reset();
-                // Clear success message after 5 seconds
-                setTimeout(() => setSuccess(false), 5000);
-            } else {
-                setError(true);
-            }
-        } catch (err) {
-            console.error('Error:', err);
-            setError(true);
-        } finally {
-            setLoading(false);
-        }
-    };
+  return (
+    <section id="contact" className="contact-section">
+      <div className="container">
+        {/* Section Header */}
+        <div className="section-header">
+          <div className="section-badge">06 // Connect</div>
+          <h2 className="section-title">
+            Let's Build Something <span className="gradient-text">Exceptional</span>
+          </h2>
+          <p className="section-subtitle">
+            Whether you are hiring for full-time engineering roles, looking for a full-stack developer in Bangalore, or seeking a technical collaborator, my inbox is open.
+          </p>
+        </div>
 
-    return (
-        <motion.div
-            ref={ref}
-            className="contact"
-            variants={variants}
-            initial="initial"
-            animate="animate"
-        >
-            <motion.div className="textContainer" variants={variants}>
-                <motion.h1 variants={variants}>Let's Work Together</motion.h1>
-                <motion.div className="item" variants={variants}>
-                    <h2>Mail</h2>
-                    <span>digeesh038@gmail.com</span>
-                </motion.div>
-                <motion.div className="item" variants={variants}>
-                    <h2>Address</h2>
-                    <span>Bengaluru, Karnataka</span>
-                </motion.div>
-            </motion.div>
-            <div className="formContainer">
-                <motion.div
-                    className="phoneSvg"
-                    initial={{ opacity: 1 }}
-                    whileInView={{ opacity: 0 }}
-                    transition={{ delay: 3, duration: 1 }}
-                >
-                    <svg height="500px" width="500px" viewBox="0 0 512 512">
-                        <g>
-                            <motion.path
-                                initial={{ pathLength: 0 }}
-                                animate={isInView && { pathLength: 1 }}
-                                transition={{ duration: 3 }}
-                                d="M255.998,0.002C114.606,0.012,0.01,114.604,0,256c0.01,141.406,114.65,255.328,255.926,255.998h0.334 l0.297-0.009c27.124,0.038,49.507-8.527,64.961-22.594c15.468-14.01,23.727-33.254,23.708-52.736 c0.02-9.148-1.914-18.306-5.521-27.024c6.086-3.464,10.143-6.612,11.301-7.444c4.152-2.957,16-18.766,7.693-31.79 c-8.344-13.014-38.042-42.678-46.152-47.702c-8.086-5.015-21.598-0.124-28.105,9.426c-6.526,9.55-11.674,6.689-11.674,6.689 s-18.516-14.957-44.124-66.621c-25.607-51.694-26.263-75.454-26.263-75.454s0.833-5.847,12.388-5.263 c11.53,0.621,23.598-7.168,24.516-16.66c0.928-9.464-4.698-51.091-10-65.598c-5.316-14.516-25.062-14.65-29.928-13.138 c-4.89,1.502-55.033,13.712-59.014,66.21c-3.966,52.506,9.565,100.18,28.943,139.309c19.387,39.119,49.128,78.765,93.3,107.406 c17.89,11.598,35.058,13.1,49.493,10.67c2.483,5.54,3.718,11.291,3.746,16.985c-0.028,11.292-4.621,22.354-14.066,30.966 c-9.469,8.564-24.071,14.928-45.2,14.967l-0.516,0.009C130.797,481.96,29.387,381.09,29.397,256 c0.01-62.621,25.339-119.186,66.367-160.237c41.053-41.023,97.612-66.354,160.234-66.364c62.621,0.01,119.181,25.34,160.232,66.364 c41.033,41.052,66.354,97.606,66.373,160.237c-0.01,38.67-9.666,74.966-26.698,106.784c-9.531,17.837-21.397,34.23-35.177,48.812 c-5.569,5.905-5.301,15.206,0.594,20.776c5.894,5.578,15.205,5.32,20.784-0.584c15.54-16.46,28.937-34.976,39.712-55.139 C501.071,340.717,512,299.589,512,256C511.98,114.604,397.389,0.012,255.998,0.002z"
-                            />
-                        </g>
-                    </svg>
-                </motion.div>
-                <motion.form
-                    ref={formRef}
-                    onSubmit={sendEmail}
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    transition={{ delay: 3, duration: 1 }}
-                >
-                    <input type="text" required placeholder="Name" name="name" />
-                    <input type="email" required placeholder="Email" name="email" />
-                    <textarea rows={8} required placeholder="Message" name="message" />
-                    
-                    <button type="submit" disabled={loading}>
-                        <b>{loading ? "Sending..." : "Submit"}</b>
-                    </button>
-                    
-                    {error && <div style={{color: '#ff4444', marginTop: '15px', fontSize: '14px'}}>❌ Error sending message. Please try again.</div>}
-                    {success && <div style={{color: '#00ff00', marginTop: '15px', fontSize: '14px'}}>✅ Message sent successfully!</div>}
-                </motion.form>
+        <div className="contact-wrapper">
+          {/* Left Column: Direct Info Card */}
+          <motion.div
+            className="bento-card contact-info-card"
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            <div className="info-card-header">
+              <h3>Contact Details</h3>
+              <p>Reach out directly or send a message through the verified form.</p>
             </div>
-        </motion.div>
-    );
+
+            <div className="contact-items">
+              {/* Email item with one-click copy */}
+              <div className="contact-item">
+                <div className="item-icon"><Mail size={18} /></div>
+                <div className="item-text">
+                  <span className="item-label">Direct Email</span>
+                  <a href={`mailto:${personal.email}`} className="item-val">{personal.email}</a>
+                </div>
+                <button
+                  type="button"
+                  onClick={copyEmail}
+                  className="copy-btn"
+                  title="Copy email to clipboard"
+                  aria-label="Copy email address"
+                >
+                  {copied ? <Check size={16} color="#10b981" /> : <Copy size={16} />}
+                </button>
+              </div>
+
+              {/* Location item */}
+              <div className="contact-item">
+                <div className="item-icon"><MapPin size={18} /></div>
+                <div className="item-text">
+                  <span className="item-label">Current Base</span>
+                  <span className="item-val">{contact.location}</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Social profiles */}
+            <div className="contact-socials-box">
+              <span className="socials-title">Follow & Connect</span>
+              <div className="social-pill-list">
+                <a
+                  href={personal.socials.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="social-pill"
+                >
+                  <Github size={16} />
+                  <span>GitHub</span>
+                </a>
+                <a
+                  href={personal.socials.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="social-pill"
+                >
+                  <Linkedin size={16} />
+                  <span>LinkedIn</span>
+                </a>
+                <a
+                  href={personal.socials.twitter}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="social-pill"
+                >
+                  <Twitter size={16} />
+                  <span>Twitter / X</span>
+                </a>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Right Column: Interactive Form */}
+          <motion.div
+            className="bento-card contact-form-card"
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            <form ref={formRef} onSubmit={handleSubmit} className="contact-form">
+              <div className="form-group">
+                <label htmlFor="name">Your Name</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  required
+                  placeholder="e.g. Alex Morgan"
+                  disabled={loading}
+                />
+              </div>
+
+              <div className="form-group">
+                <label htmlFor="email">Email Address</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  required
+                  placeholder="e.g. alex@company.com"
+                  disabled={loading}
+                />
+              </div>
+
+              <div className="form-group">
+                <label htmlFor="subject">Subject / Purpose</label>
+                <input
+                  type="text"
+                  id="subject"
+                  name="subject"
+                  required
+                  placeholder="e.g. Full-Stack Engineering Role / Project Inquiry"
+                  disabled={loading}
+                />
+              </div>
+
+              <div className="form-group">
+                <label htmlFor="message">Message</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows={5}
+                  required
+                  placeholder="Share a brief overview of your team, role, or project..."
+                  disabled={loading}
+                />
+              </div>
+
+              <button type="submit" disabled={loading} className="submit-btn">
+                <span>{loading ? "Transmitting Message..." : "Send Message"}</span>
+                <Send size={16} />
+              </button>
+
+              {success && (
+                <div className="form-alert success">
+                  <CheckCircle2 size={18} />
+                  <span>Thank you! Your message was transmitted successfully. I will get back to you shortly.</span>
+                </div>
+              )}
+
+              {error && (
+                <div className="form-alert error">
+                  <AlertCircle size={18} />
+                  <span>Unable to send message right now. Please email directly at digeesh038@gmail.com.</span>
+                </div>
+              )}
+            </form>
+          </motion.div>
+        </div>
+      </div>
+    </section>
+  );
 };
 
 export default Contact;

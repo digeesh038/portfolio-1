@@ -1,76 +1,154 @@
-@import "../../app.scss";
+@import '../../styles/variables.scss';
 
-.parallax {
-    .div {
-        border: 2px solid violet;
-        border-radius: 90px 0px;
-        font-size: 1rem;
-        width: 90%;
-        max-width: 960px;
-        height: auto;
-        text-align: justify;
-        padding: 30px;
-        background-color: rgb(12, 2, 49);
-        animation-name: example-animation;
-        animation-duration: 2s;
-        animation-iteration-count: infinite;
-        margin: auto;
+.about-section {
+  background: transparent;
+}
 
-        @include mobile {
-            width: 90%;
-            font-size: 0.9rem;
-            padding: 20px;
-            border-radius: 110px 0px;
-            font-weight: 600;
-        }
+.about-bento-grid {
+  display: grid;
+  grid-template-columns: 1.25fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 1.5rem;
 
-        @media (max-width: 400px) {
-            font-size: 0.8rem;
-            padding: 15px;
-        }
+  @media (max-width: 900px) {
+    grid-template-columns: 1fr;
+  }
+}
 
-        @media (min-width: 768px) and (max-width: 1024px) {
-            font-size: 1rem;
-            padding: 25px;
-        }
+.narrative-card {
+  grid-column: 1 / 2;
+  grid-row: 1 / 3;
+
+  @media (max-width: 900px) {
+    grid-column: 1;
+    grid-row: auto;
+  }
+}
+
+.card-icon-title {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+
+  .card-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    background: var(--badge-bg);
+    border: 1px solid var(--badge-border);
+    color: var(--accent-lime);
+  }
+
+  h3 {
+    font-size: 1.25rem;
+    font-weight: 750;
+    color: var(--text-primary);
+  }
+}
+
+.narrative-text {
+  font-size: 0.98rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 1rem;
+
+  strong {
+    color: var(--text-primary);
+  }
+}
+
+.narrative-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+}
+
+/* Principles Card */
+.principles-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+
+  li {
+    font-size: 0.92rem;
+    color: var(--text-secondary);
+    line-height: 1.55;
+    position: relative;
+    padding-left: 1.25rem;
+
+    &::before {
+      content: '▹';
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: var(--accent-red);
+      font-size: 1.05rem;
+      font-weight: bold;
     }
 
-    @keyframes example-animation {
-        25% { box-shadow: 0px 0px 50px rgb(232, 142, 232); }
-        50% { box-shadow: 0px 0px 50px rgb(228, 0, 228); }
-        75% { box-shadow: 0px 0px 50px rgb(112, 2, 112); }
-        100% { box-shadow: 0px 0px 50px rgb(48, 0, 48); }
+    strong {
+      color: var(--text-primary);
+    }
+  }
+}
+
+/* Education Card */
+.education-card {
+  .edu-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+
+    .edu-institution {
+      font-size: 1.05rem;
+      font-weight: 750;
+      color: var(--text-primary);
     }
 
-    .div p {
-        text-indent: 50px;
-
-        @media (max-width: 500px) {
-            text-indent: 30px;
-        }
+    .edu-location {
+      font-size: 0.85rem;
+      color: var(--text-muted);
     }
 
-    h1 {
-        text-align: center;
-
-        @include mobile {
-            font-size: 2.5rem;
-            margin-bottom: 50px;
-            text-align: center;
-        }
-
-        @media (max-width: 400px) {
-            font-size: 2rem;
-        }
+    .edu-degree {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--accent-lime);
+      margin-top: 0.35rem;
     }
 
-    .stars {
-        background-image: url("/stars.png");
-        background-size: cover;
-        background-position: bottom;
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        z-index: 3;
+    .edu-meta {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin: 0.35rem 0;
+      font-family: $font-mono;
+      font-size: 0.82rem;
+
+      .edu-period {
+        color: var(--text-muted);
+      }
+
+      .edu-score {
+        color: var(--accent-lime);
+        background: var(--badge-bg);
+        border: 1px solid var(--badge-border);
+        padding: 0.15rem 0.55rem;
+        border-radius: 4px;
+        font-weight: 700;
+      }
     }
+
+    .edu-notes {
+      font-size: 0.86rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+  }
 }

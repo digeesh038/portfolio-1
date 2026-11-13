@@ -1,151 +1,245 @@
-@import "../../app.scss";
+@import '../../styles/variables.scss';
 
-.contact {
-    margin: auto;
-    max-width: 1366px;
-    height: 100%;
+.contact-section {
+  background: transparent;
+}
+
+.contact-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1.35fr;
+  gap: 2rem;
+
+  @media (max-width: 900px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.contact-info-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  .info-card-header {
+    margin-bottom: 2rem;
+
+    h3 {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--text-primary);
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      font-size: 0.94rem;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+  }
+
+  .contact-items {
     display: flex;
-    align-items: center;
-    gap: 50px;
+    flex-direction: column;
+    gap: 1.25rem;
+    margin-bottom: 2rem;
 
-    // Added styles for desktop
-    @include desktop {
-        flex-direction: row;
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.9rem 1.1rem;
+      background: var(--bg-elevated);
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+
+      .item-icon {
+        display: flex;
         align-items: center;
-        gap: 50px;
-    }
+        justify-content: center;
+        width: 38px;
+        height: 38px;
+        border-radius: 8px;
+        background: var(--badge-bg);
+        color: var(--accent-lime);
+        flex-shrink: 0;
+      }
 
-    @include tablet {
-        gap: 30px;
-        flex-direction: column;
-    }
-
-    @include mobile {
-        width: 100%;
-        padding: 10px;
-        flex-direction: column;
-        gap: 20px;
-    }
-
-    .textContainer {
+      .item-text {
         flex: 1;
         display: flex;
         flex-direction: column;
-        gap: 40px;
 
-        // Added styles for desktop
-        @include desktop {
-            gap: 40px;
-            text-align: left;
-            align-items: flex-start;
-            margin-top: 0;
+        .item-label {
+          font-size: 0.75rem;
+          color: var(--text-muted);
+          font-family: $font-mono;
+          text-transform: uppercase;
         }
 
-        @include tablet {
-            gap: 30px;
-            text-align: center;
-            align-items: center;
+        .item-val {
+          font-size: 0.92rem;
+          font-weight: 600;
+          color: var(--text-primary);
+          text-decoration: none;
+
+          &:hover {
+            color: var(--accent-lime);
+          }
         }
+      }
 
-        @include mobile {
-            gap: 20px;
-            text-align: center;
-            align-items: center;
-            margin-top: 70px;
+      .copy-btn {
+        background: transparent;
+        border: none;
+        color: var(--text-muted);
+        cursor: pointer;
+        padding: 0.45rem;
+        border-radius: 6px;
+        transition: all 0.2s ease;
+
+        &:hover {
+          color: var(--accent-lime);
+          background: var(--bg-card);
         }
+      }
+    }
+  }
 
-        h1 {
-            font-size: 100px;
-            line-height: 88px;
+  .contact-socials-box {
+    border-top: 1px solid var(--border-color);
+    padding-top: 1.5rem;
 
-            @include tablet {
-                font-size: 60px;
-                line-height: 55px;
-            }
-
-            @include mobile {
-                font-size: 36px;
-            }
-        }
-
-        span {
-            font-weight: 300;
-        }
+    .socials-title {
+      display: block;
+      font-size: 0.82rem;
+      font-family: $font-mono;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      margin-bottom: 0.85rem;
     }
 
-    .formContainer {
-        flex: 1;
-        position: relative;
+    .social-pill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.65rem;
 
-        @include tablet {
-            width: 80%;
-            padding: 30px;
+      .social-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.45rem;
+        padding: 0.45rem 0.85rem;
+        background: var(--bg-elevated);
+        border: 1px solid var(--border-color);
+        border-radius: 8px;
+        font-size: 0.85rem;
+        font-weight: 500;
+        color: var(--text-secondary);
+        text-decoration: none;
+        transition: all 0.2s ease;
+
+        &:hover {
+          color: var(--accent-lime);
+          border-color: var(--accent-lime);
+          box-shadow: 0 4px 12px var(--accent-glow);
+          transform: translateY(-2px);
         }
-
-        @include mobile {
-            width: 100%;
-            padding: 50px;
-        }
-
-        .phoneSvg {
-            stroke: orange;
-            position: absolute;
-            margin: auto;
-            z-index: -1;
-        }
-
-        svg {
-            @include tablet {
-                width: 300px;
-                height: 350px;
-                margin-left: 20px;
-            }
-
-            @include mobile {
-                width: 300px;
-                height: 350px;
-                margin-left: 40px;
-            }
-        }
-
-        form {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-
-            input,
-            textarea {
-                padding: 20px;
-                background-color: transparent;
-                border: 1px solid white;
-                color: white;
-                border-radius: 5px;
-
-                @include tablet {
-                    padding: 15px;
-                }
-
-                @include mobile {
-                    padding: 10px;
-                }
-            }
-
-            button {
-                padding: 20px;
-                border: none;
-                background-color: orange;
-                font-weight: 600;
-                cursor: pointer;
-                font-size: large;
-
-                @include tablet {
-                    padding: 15px;
-                }
-
-                @include mobile {
-                    padding: 10px;
-                }
-            }
-        }
+      }
     }
+  }
+}
+
+/* Contact Form */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+
+    label {
+      font-size: 0.84rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      font-family: $font-mono;
+    }
+
+    input, textarea {
+      width: 100%;
+      background: var(--bg-elevated);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 0.8rem 1rem;
+      color: var(--text-primary);
+      font-family: $font-sans;
+      font-size: 0.92rem;
+      transition: all 0.2s ease;
+
+      &::placeholder {
+        color: var(--text-muted);
+      }
+
+      &:focus {
+        outline: none;
+        border-color: var(--accent-lime);
+        box-shadow: 0 0 0 3px var(--accent-glow);
+      }
+
+      &:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+      }
+    }
+  }
+
+  .submit-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    background: var(--accent-lime);
+    color: var(--accent-primary-text);
+    border: none;
+    padding: 0.9rem 1.85rem;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    margin-top: 0.5rem;
+
+    &:hover:not(:disabled) {
+      background: var(--accent-primary-hover);
+      box-shadow: 0 6px 22px var(--accent-glow);
+      transform: translateY(-2px);
+    }
+
+    &:disabled {
+      opacity: 0.7;
+      cursor: wait;
+    }
+  }
+
+  .form-alert {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    padding: 0.85rem 1rem;
+    border-radius: 8px;
+    font-size: 0.88rem;
+    margin-top: 0.5rem;
+
+    &.success {
+      background: var(--badge-bg);
+      border: 1px solid var(--badge-border);
+      color: var(--accent-lime);
+    }
+
+    &.error {
+      background: var(--badge-red-bg);
+      border: 1px solid var(--badge-red-border);
+      color: var(--accent-red);
+    }
+  }
 }
